@@ -18,10 +18,10 @@ jobs:
           sudo apt install docker-ce
           sudo systemctl status docker
 
-          wget -O Dockerfile https://raw.githubusercontent.com/SystematicError/wine-crossover/master/Dockerfile
+          wget -O Dockerfile https://raw.githubusercontent.com/Rustring/wine-crossover/master/Dockerfile
           sudo docker build -t wine-build-image .
 
-          wget -O compile-wine.sh https://raw.githubusercontent.com/SystematicError/wine-crossover/master/compile-wine.sh
+          wget -O compile-wine.sh https://raw.githubusercontent.com/Rustring/wine-crossover/master/compile-wine.sh
           cat compile-wine.sh | sudo docker run -i -v $(realpath ./build):/mnt/build --name wine-build-container wine-build-image
 
       - name: Upload Artifacts
