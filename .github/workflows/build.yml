@@ -25,7 +25,7 @@ jobs:
           cat compile-wine.sh | sudo docker run -i -v $(realpath ./build):/mnt/build --name wine-build-container wine-build-image
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: wine-crossover-build
           path: build/wine-crossover
